@@ -43,4 +43,9 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	
 	else:
 		print ("Error: Response code: " + str(response_code))
+		$ProgressBar.value = 90
+		$RichTextLabel2.clear()
+		$RichTextLabel2.push_color(Color.RED)
+		$RichTextLabel2.append_text("Error: Response code: " +str(response_code))
+		$ProgressBar.value = 100
 	pass # Replace with function body.
